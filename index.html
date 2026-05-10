@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pearl Skin Hair & Laser Clinic | Dr. Anshul Jain</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#B8935A;--gold-light:#D4AA78;--cream:#FAF8F4;--deep:#1A2E1A;
+  --text:#2C2C2A;--muted:#6B6B67;--border:#E8E3D8;--white:#FFFFFF;
+}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--cream);overflow-x:hidden}
+
+/* NAV */
+nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-dot{width:32px;height:32px;border-radius:50%;background:var(--deep);display:flex;align-items:center;justify-content:center}
+.logo-dot svg{width:18px;height:18px;fill:var(--gold)}
+.logo-text{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;letter-spacing:0.05em;color:var(--deep);line-height:1.2}
+.logo-sub{font-size:10px;color:var(--muted);font-weight:300;letter-spacing:0.1em;text-transform:uppercase}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:13px;color:var(--muted);text-decoration:none;letter-spacing:0.03em;transition:color 0.2s}
+.nav-links a:hover{color:var(--deep)}
+.nav-cta{background:var(--deep);color:var(--white);border:none;padding:10px 20px;border-radius:4px;font-size:13px;font-family:'DM Sans',sans-serif;cursor:pointer;letter-spacing:0.03em}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:540px;background:var(--white)}
+.hero-left{padding:5rem 3rem 4rem 3.5rem;display:flex;flex-direction:column;justify-content:center}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:#F0F7F0;color:var(--deep);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:1.5rem;font-weight:500}
+.hero-badge span{width:6px;height:6px;border-radius:50%;background:#4A7C59;display:inline-block}
+h1{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:600;color:var(--deep);line-height:1.1;margin-bottom:1.2rem}
+h1 em{color:var(--gold);font-style:italic}
+.hero-sub{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:2rem;max-width:400px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--deep);color:var(--white);padding:14px 28px;border-radius:4px;font-size:14px;font-family:'DM Sans',sans-serif;border:none;cursor:pointer;letter-spacing:0.02em}
+.btn-outline{background:transparent;color:var(--deep);padding:13px 28px;border-radius:4px;font-size:14px;font-family:'DM Sans',sans-serif;border:1.5px solid var(--deep);cursor:pointer}
+.hero-stats{display:flex;gap:2rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border)}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--deep)}
+.stat-label{font-size:12px;color:var(--muted);letter-spacing:0.05em}
+.hero-right{background:linear-gradient(135deg,#1A2E1A 0%,#2D4A2D 60%,#3D5C3D 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero-img-placeholder{text-align:center;color:rgba(255,255,255,0.85);padding:3rem}
+.hero-img-icon{width:90px;height:90px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:36px}
+.doctor-name{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--white);margin-bottom:0.3rem}
+.doctor-qual{font-size:12px;color:rgba(255,255,255,0.6);letter-spacing:0.08em;text-transform:uppercase}
+.rating-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(184,147,90,0.2);border:1px solid var(--gold);border-radius:20px;padding:6px 14px;margin-top:1rem;font-size:13px;color:var(--gold-light)}
+.hero-pattern{position:absolute;top:0;right:0;width:120px;height:120px;opacity:0.08}
+
+/* TRUST BAR */
+.trust-bar{background:var(--deep);padding:1rem 2rem;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.8);font-size:13px}
+.trust-icon{color:var(--gold);font-size:16px}
+
+/* SERVICES */
+.section{padding:5rem 2.5rem}
+.section-header{text-align:center;margin-bottom:3.5rem}
+.section-label{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:0.8rem}
+h2{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:600;color:var(--deep);line-height:1.2}
+.section-sub{font-size:15px;color:var(--muted);margin-top:0.8rem;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.6}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:960px;margin:0 auto}
+.service-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.8rem 1.5rem;transition:all 0.25s}
+.service-card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.svc-icon{width:44px;height:44px;border-radius:8px;background:#F0F7F0;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:20px}
+.svc-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--deep);margin-bottom:0.4rem}
+.svc-desc{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* WHY US */
+.why-section{background:var(--white);padding:5rem 2.5rem}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:900px;margin:0 auto;align-items:center}
+.why-text h2{text-align:left;font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:600;color:var(--deep);margin-bottom:1.5rem}
+.why-points{display:flex;flex-direction:column;gap:1.2rem}
+.why-point{display:flex;gap:14px;align-items:flex-start}
+.why-num{width:28px;height:28px;border-radius:50%;background:var(--deep);color:var(--white);font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.why-point-text strong{display:block;font-size:14px;font-weight:500;color:var(--deep);margin-bottom:2px}
+.why-point-text span{font-size:13px;color:var(--muted);line-height:1.5}
+.why-visual{background:var(--cream);border-radius:12px;padding:2rem;border:1px solid var(--border)}
+.review-card{background:var(--white);border-radius:8px;padding:1.4rem;border:1px solid var(--border);margin-bottom:1rem}
+.review-stars{color:var(--gold);font-size:14px;margin-bottom:0.5rem}
+.review-text{font-size:13px;color:var(--muted);line-height:1.6;font-style:italic;margin-bottom:0.8rem}
+.reviewer{font-size:12px;font-weight:500;color:var(--deep)}
+.review-meta{font-size:11px;color:var(--muted)}
+
+/* HOURS */
+.hours-section{background:var(--deep);padding:4rem 2.5rem;color:var(--white)}
+.hours-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hours-text .section-label{color:var(--gold)}
+.hours-text h2{color:var(--white);font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;margin-bottom:1.5rem}
+.hours-table{width:100%}
+.hours-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:13px}
+.hours-row:last-child{border:none}
+.day{color:rgba(255,255,255,0.6)}
+.time{color:var(--white)}
+.closed{color:rgba(255,255,255,0.3)}
+.contact-box{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:2rem}
+.contact-box h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--white);margin-bottom:1.2rem}
+.contact-item{display:flex;gap:10px;margin-bottom:1rem;font-size:13px;color:rgba(255,255,255,0.75);line-height:1.5}
+.contact-label{color:var(--gold);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;display:block;margin-bottom:2px}
+.book-btn{width:100%;margin-top:1.2rem;background:var(--gold);color:var(--white);border:none;padding:14px;border-radius:4px;font-size:14px;font-family:'DM Sans',sans-serif;cursor:pointer;letter-spacing:0.03em}
+
+/* FOOTER */
+footer{background:#111;padding:2.5rem;text-align:center;color:rgba(255,255,255,0.4);font-size:12px}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold);margin-bottom:0.5rem}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <div class="logo-dot">
+      <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5c0 2.76-2.24 5-5 5S7 9.76 7 7a5 5 0 015-5zm0 12c5.33 0 8 2.67 8 4v2H4v-2c0-1.33 2.67-4 8-4z"/></svg>
+    </div>
+    <div>
+      <div class="logo-text">Pearl Skin Hair & Laser Clinic</div>
+      <div class="logo-sub">Dr. Anshul Jain · Dermatologist</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Services</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Reviews</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <button class="nav-cta">Book Appointment</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge"><span></span> Trusted by 296+ patients · 4.8★ Rating</div>
+    <h1>Skin & Hair Care You Can <em>Trust</em></h1>
+    <p class="hero-sub">Advanced dermatology, laser treatments, and cosmetic procedures by Nagpur's top-rated dermatologist — in a professional, hygienic environment.</p>
+    <div class="hero-actions">
+      <button class="btn-primary">Book Consultation</button>
+      <button class="btn-outline">View Services</button>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">296+</div><div class="stat-label">Happy Patients</div></div>
+      <div><div class="stat-num">4.8★</div><div class="stat-label">Google Rating</div></div>
+      <div><div class="stat-num">10+</div><div class="stat-label">Years Experience</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-placeholder">
+      <div class="hero-img-icon">👩‍⚕️</div>
+      <div class="doctor-name">Dr. Anshul Jain</div>
+      <div class="doctor-qual">MD Dermatology · Nagpur</div>
+      <div class="rating-badge">★★★★★ &nbsp;Top Dermatologist in Nagpur</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-icon">✦</span> Evidence-Based Treatments</div>
+  <div class="trust-item"><span class="trust-icon">✦</span> Alma Laser Certified</div>
+  <div class="trust-item"><span class="trust-icon">✦</span> LGBTQ+ Friendly Clinic</div>
+  <div class="trust-item"><span class="trust-icon">✦</span> All Payments Accepted</div>
+  <div class="trust-item"><span class="trust-icon">✦</span> Wheelchair Accessible</div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" style="background:var(--cream)">
+  <div class="section-header">
+    <div class="section-label">What We Offer</div>
+    <h2>Comprehensive Skin & Hair Treatments</h2>
+    <p class="section-sub">From acne to anti-aging, hair loss to laser therapy — evidence-based care tailored to you.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="svc-icon">🔬</div>
+      <div class="svc-name">Acne & Pimple Treatment</div>
+      <p class="svc-desc">Targeted treatment for active acne, scars, and pigmentation with long-lasting results.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">✨</div>
+      <div class="svc-name">Laser Skin Therapy</div>
+      <p class="svc-desc">Painless Alma Laser for pigmentation, melasma, hair removal — the only one in Central India.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">💆</div>
+      <div class="svc-name">Hair Loss Solutions</div>
+      <p class="svc-desc">Advanced hair therapy, PRP, mesotherapy and permanent transplant solutions for all baldness types.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">🌿</div>
+      <div class="svc-name">Anti-Aging & Fillers</div>
+      <p class="svc-desc">Dermal fillers, skin tightening, chemical peels and rejuvenation for youthful, radiant skin.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">🧴</div>
+      <div class="svc-name">Skin Whitening & De-tan</div>
+      <p class="svc-desc">Glutathione injections, microdermabrasion, and deep peels for even skin tone and glow.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">⚕️</div>
+      <div class="svc-name">Medical Dermatology</div>
+      <p class="svc-desc">Treatment for eczema, fungal infections, allergies, dandruff, and chronic skin conditions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section">
+  <div class="why-grid">
+    <div class="why-text">
+      <div class="section-label" style="color:var(--gold);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;font-weight:500;margin-bottom:0.8rem">Why Choose Us</div>
+      <h2>Nagpur's Most Trusted Skin Specialist</h2>
+      <div class="why-points">
+        <div class="why-point">
+          <div class="why-num">1</div>
+          <div class="why-point-text">
+            <strong>Expert Diagnosis First</strong>
+            <span>Dr. Jain understands your root cause before recommending any treatment — no unnecessary procedures.</span>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-num">2</div>
+          <div class="why-point-text">
+            <strong>Advanced Technology</strong>
+            <span>Alma Laser — the only painless laser machine in Central India. Evidence-based, FDA-approved procedures.</span>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-num">3</div>
+          <div class="why-point-text">
+            <strong>Affordable & Ethical Care</strong>
+            <span>Honest consultations. If something isn't needed for your skin, Dr. Jain will say so — unlike others.</span>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-num">4</div>
+          <div class="why-point-text">
+            <strong>Trusted Across Vidarbha</strong>
+            <span>Patients from Nagpur and beyond — including international visitors — trust Pearl Skin Clinic.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Dr. Anshul Jain is outstanding. Her approach is friendly and professional — I noticed significant improvements after my treatment sessions."</p>
+        <div class="reviewer">Archana Chaudhary</div>
+        <div class="review-meta">Verified Patient · 5 months ago</div>
+      </div>
+      <div class="review-card" style="margin-bottom:0">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The clinic is elegant, impeccably clean, equipped with advanced technology. A trustworthy dermatologist — highly recommended."</p>
+        <div class="reviewer">Garima Chadda</div>
+        <div class="review-meta">Verified Patient · 3 months ago</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOURS + CONTACT -->
+<section class="hours-section">
+  <div class="hours-inner">
+    <div class="hours-text">
+      <div class="section-label">Clinic Timings</div>
+      <h2>We're Here When You Need Us</h2>
+      <div class="hours-table">
+        <div class="hours-row"><span class="day">Monday – Saturday</span><span class="time">11:00 AM – 8:00 PM</span></div>
+        <div class="hours-row"><span class="day">Sunday</span><span class="closed">Closed</span></div>
+      </div>
+      <p style="font-size:13px;color:rgba(255,255,255,0.5);margin-top:1.5rem;line-height:1.6">Walk-ins welcome. Appointments recommended for laser and cosmetic procedures.</p>
+    </div>
+    <div class="contact-box">
+      <h3>Book Your Appointment</h3>
+      <div class="contact-item">
+        <div>
+          <span class="contact-label">Phone</span>
+          1800 419 0443
+        </div>
+      </div>
+      <div class="contact-item">
+        <div>
+          <span class="contact-label">Location</span>
+          3rd Floor, Manomay Plaza, Central Bazaar Road, Ramdaspeth, Nagpur – 440010
+        </div>
+      </div>
+      <div class="contact-item">
+        <div>
+          <span class="contact-label">Serving</span>
+          Nagpur & entire Vidarbha region
+        </div>
+      </div>
+      <button class="book-btn">📞 Call to Book Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Pearl Skin Hair & Laser Clinic</div>
+  <p>Dr. Anshul Jain · Dermatologist · Nagpur, Maharashtra</p>
+  <p style="margin-top:0.5rem">© 2025 Pearl Skin Clinic. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
