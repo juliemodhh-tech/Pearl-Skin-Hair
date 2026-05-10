@@ -9,13 +9,19 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --gold:#B8935A;--gold-light:#D4AA78;--cream:#FAF8F4;--deep:#1A2E1A;
-  --text:#2C2C2A;--muted:#6B6B67;--border:#E8E3D8;--white:#FFFFFF;
+  --gold:#B8894A;--gold-light:#E0B27C;--cream:#F7F1E8;--deep:#1A2E1A;
+  --text:#2B2722;--muted:#6B6258;--border:#E4D7C8;--white:#FFF8EE;
 }
 body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--cream);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* MOTION */
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes floatSoft{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+@keyframes glowPulse{0%{box-shadow:0 0 0 rgba(184,147,90,0.15)}50%{box-shadow:0 10px 30px rgba(184,147,90,0.18)}100%{box-shadow:0 0 0 rgba(184,147,90,0.15)}}
 
 /* NAV */
-nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+nav{background:rgba(255,248,238,0.78);border-bottom:1px solid rgba(228,215,200,0.6);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 10px 30px rgba(26,46,26,0.06)}
 .logo{display:flex;align-items:center;gap:10px}
 .logo-dot{width:32px;height:32px;border-radius:50%;background:var(--deep);display:flex;align-items:center;justify-content:center}
 .logo-dot svg{width:18px;height:18px;fill:var(--gold)}
@@ -41,12 +47,38 @@ h1 em{color:var(--gold);font-style:italic}
 .stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--deep)}
 .stat-label{font-size:12px;color:var(--muted);letter-spacing:0.05em}
 .hero-right{background:linear-gradient(135deg,#1A2E1A 0%,#2D4A2D 60%,#3D5C3D 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero-right::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,46,26,0.65) 0%,rgba(26,46,26,0.55) 50%,rgba(26,46,26,0.5) 100%),url('hero.jpg') center/cover no-repeat}
+.hero-right>*{position:relative;z-index:1}
 .hero-img-placeholder{text-align:center;color:rgba(255,255,255,0.85);padding:3rem}
 .hero-img-icon{width:90px;height:90px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:36px}
 .doctor-name{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--white);margin-bottom:0.3rem}
 .doctor-qual{font-size:12px;color:rgba(255,255,255,0.6);letter-spacing:0.08em;text-transform:uppercase}
 .rating-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(184,147,90,0.2);border:1px solid var(--gold);border-radius:20px;padding:6px 14px;margin-top:1rem;font-size:13px;color:var(--gold-light)}
 .hero-pattern{position:absolute;top:0;right:0;width:120px;height:120px;opacity:0.08}
+
+/* ANIMATIONS */
+.hero-left>*{animation:fadeUp 0.7s ease-out both}
+.hero-badge{animation-delay:0.05s}
+.hero-left h1{animation-delay:0.12s}
+.hero-sub{animation-delay:0.2s}
+.hero-actions{animation-delay:0.28s}
+.hero-stats{animation-delay:0.36s}
+.hero-right{animation:fadeUp 0.7s ease-out 0.12s both}
+.hero-img-icon{animation:floatSoft 4.5s ease-in-out infinite}
+.service-card{animation:fadeUp 0.6s ease-out both}
+.service-card:nth-child(1){animation-delay:0.05s}
+.service-card:nth-child(2){animation-delay:0.1s}
+.service-card:nth-child(3){animation-delay:0.15s}
+.service-card:nth-child(4){animation-delay:0.2s}
+.service-card:nth-child(5){animation-delay:0.25s}
+.service-card:nth-child(6){animation-delay:0.3s}
+.review-card{animation:fadeUp 0.6s ease-out both}
+.review-card:nth-child(1){animation-delay:0.08s}
+.review-card:nth-child(2){animation-delay:0.16s}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important}
+}
 
 /* TRUST BAR */
 .trust-bar{background:var(--deep);padding:1rem 2rem;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}
@@ -76,6 +108,8 @@ h2{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:600;color
 .why-point-text strong{display:block;font-size:14px;font-weight:500;color:var(--deep);margin-bottom:2px}
 .why-point-text span{font-size:13px;color:var(--muted);line-height:1.5}
 .why-visual{background:var(--cream);border-radius:12px;padding:2rem;border:1px solid var(--border)}
+.clinic-photo{border-radius:10px;overflow:hidden;border:1px solid var(--border);margin-bottom:1rem}
+.clinic-photo img{width:100%;height:180px;object-fit:cover;display:block}
 .review-card{background:var(--white);border-radius:8px;padding:1.4rem;border:1px solid var(--border);margin-bottom:1rem}
 .review-stars{color:var(--gold);font-size:14px;margin-bottom:0.5rem}
 .review-text{font-size:13px;color:var(--muted);line-height:1.6;font-style:italic;margin-bottom:0.8rem}
@@ -102,6 +136,55 @@ h2{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:600;color
 /* FOOTER */
 footer{background:#111;padding:2.5rem;text-align:center;color:rgba(255,255,255,0.4);font-size:12px}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold);margin-bottom:0.5rem}
+
+/* GALLERY */
+.gallery-section{background:var(--cream)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:980px;margin:0 auto}
+.gallery-item{border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--white)}
+.gallery-item img{width:100%;height:220px;object-fit:cover;display:block;transition:transform 0.35s ease}
+.gallery-item:hover img{transform:scale(1.04)}
+
+/* RESPONSIVE */
+@media (max-width:980px){
+  nav{padding:0 1.5rem}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:4rem 2rem 3rem}
+  .hero-right{padding:3rem 1.5rem}
+  .hero-sub{max-width:520px}
+  .hero-stats{gap:1.5rem;flex-wrap:wrap}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr;gap:2.5rem}
+  .hours-inner{grid-template-columns:1fr;gap:2.5rem}
+}
+
+@media (max-width:720px){
+  nav{height:auto;flex-wrap:wrap;gap:12px;padding:1rem 1.25rem}
+  .nav-links{width:100%;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+  .nav-cta{width:100%}
+  h1{font-size:2.6rem}
+  h2{font-size:2.1rem}
+  .section{padding:3.8rem 1.5rem}
+  .services-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr}
+  .why-section{padding:4rem 1.5rem}
+  .hours-section{padding:3.8rem 1.5rem}
+  .trust-bar{gap:1.2rem;padding:0.9rem 1rem}
+}
+
+@media (max-width:520px){
+  .logo-text{font-size:13px}
+  .logo-sub{font-size:9px}
+  .hero-left{padding:3.2rem 1.25rem 2.5rem}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .btn-primary,.btn-outline{width:100%;text-align:center}
+  .hero-stats{gap:1rem}
+  .stat-num{font-size:1.6rem}
+  .section-sub{font-size:14px}
+  .service-card{padding:1.5rem 1.25rem}
+  .contact-box{padding:1.5rem}
+  .gallery-item img{height:200px}
+}
 </style>
 </head>
 <body>
@@ -118,12 +201,12 @@ footer{background:#111;padding:2.5rem;text-align:center;color:rgba(255,255,255,0
     </div>
   </div>
   <ul class="nav-links">
-    <li><a href="#">Services</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Reviews</a></li>
-    <li><a href="#">Contact</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="nav-cta">Book Appointment</button>
+  <a class="nav-cta" href="#book">Book Appointment</a>
 </nav>
 
 <!-- HERO -->
@@ -133,8 +216,8 @@ footer{background:#111;padding:2.5rem;text-align:center;color:rgba(255,255,255,0
     <h1>Skin & Hair Care You Can <em>Trust</em></h1>
     <p class="hero-sub">Advanced dermatology, laser treatments, and cosmetic procedures by Nagpur's top-rated dermatologist — in a professional, hygienic environment.</p>
     <div class="hero-actions">
-      <button class="btn-primary">Book Consultation</button>
-      <button class="btn-outline">View Services</button>
+      <a class="btn-primary" href="#book">Book Consultation</a>
+      <a class="btn-outline" href="#services">View Services</a>
     </div>
     <div class="hero-stats">
       <div><div class="stat-num">296+</div><div class="stat-label">Happy Patients</div></div>
@@ -162,7 +245,7 @@ footer{background:#111;padding:2.5rem;text-align:center;color:rgba(255,255,255,0
 </div>
 
 <!-- SERVICES -->
-<section class="section" style="background:var(--cream)">
+<section class="section" id="services" style="background:var(--cream)">
   <div class="section-header">
     <div class="section-label">What We Offer</div>
     <h2>Comprehensive Skin & Hair Treatments</h2>
@@ -203,7 +286,7 @@ footer{background:#111;padding:2.5rem;text-align:center;color:rgba(255,255,255,0
 </section>
 
 <!-- WHY US -->
-<section class="why-section">
+<section class="why-section" id="about">
   <div class="why-grid">
     <div class="why-text">
       <div class="section-label" style="color:var(--gold);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;font-weight:500;margin-bottom:0.8rem">Why Choose Us</div>
@@ -239,7 +322,10 @@ footer{background:#111;padding:2.5rem;text-align:center;color:rgba(255,255,255,0
         </div>
       </div>
     </div>
-    <div class="why-visual">
+    <div class="why-visual" id="reviews">
+      <div class="clinic-photo">
+        <img src="1.jpg" alt="Clinic interior">
+      </div>
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
         <p class="review-text">"Dr. Anshul Jain is outstanding. Her approach is friendly and professional — I noticed significant improvements after my treatment sessions."</p>
@@ -256,8 +342,25 @@ footer{background:#111;padding:2.5rem;text-align:center;color:rgba(255,255,255,0
   </div>
 </section>
 
+<!-- GALLERY -->
+<section class="section gallery-section">
+  <div class="section-header">
+    <div class="section-label">Clinic Highlights</div>
+    <h2>Premium, Hygienic, Professional</h2>
+    <p class="section-sub">A quick look at our clinic ambiance, technology, and patient-first environment.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="2.jpg" alt="Clinic ambience"></div>
+    <div class="gallery-item"><img src="3.jpg" alt="Treatment room"></div>
+    <div class="gallery-item"><img src="4.jpg" alt="Reception area"></div>
+    <div class="gallery-item"><img src="5.jpg" alt="Laser equipment"></div>
+    <div class="gallery-item"><img src="6.jpg" alt="Consultation setup"></div>
+    <div class="gallery-item"><img src="1.jpg" alt="Clinic interior detail"></div>
+  </div>
+</section>
+
 <!-- HOURS + CONTACT -->
-<section class="hours-section">
+<section class="hours-section" id="contact">
   <div class="hours-inner">
     <div class="hours-text">
       <div class="section-label">Clinic Timings</div>
@@ -288,8 +391,43 @@ footer{background:#111;padding:2.5rem;text-align:center;color:rgba(255,255,255,0
           Nagpur & entire Vidarbha region
         </div>
       </div>
-      <button class="book-btn">📞 Call to Book Now</button>
+      <a class="book-btn" href="#book">📞 Call to Book Now</a>
     </div>
+  </div>
+</section>
+
+<!-- BOOKING FORM -->
+<section class="section" id="book" style="background:var(--white)">
+  <div class="section-header">
+    <div class="section-label">Book Appointment</div>
+    <h2>Schedule a Consultation</h2>
+    <p class="section-sub">Share your details and our team will confirm the best time slot for you.</p>
+  </div>
+  <div style="max-width:720px;margin:0 auto;background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:2rem">
+    <form>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem">
+        <input type="text" placeholder="Full Name" style="padding:12px 14px;border:1px solid var(--border);border-radius:6px;background:var(--white);font-family:'DM Sans',sans-serif" required>
+        <input type="tel" placeholder="Phone Number" style="padding:12px 14px;border:1px solid var(--border);border-radius:6px;background:var(--white);font-family:'DM Sans',sans-serif" required>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem">
+        <input type="email" placeholder="Email" style="padding:12px 14px;border:1px solid var(--border);border-radius:6px;background:var(--white);font-family:'DM Sans',sans-serif">
+        <select style="padding:12px 14px;border:1px solid var(--border);border-radius:6px;background:var(--white);font-family:'DM Sans',sans-serif" required>
+          <option value="" disabled selected>Service Interested In</option>
+          <option>Acne & Pimple Treatment</option>
+          <option>Laser Skin Therapy</option>
+          <option>Hair Loss Solutions</option>
+          <option>Anti-Aging & Fillers</option>
+          <option>Skin Whitening & De-tan</option>
+          <option>Medical Dermatology</option>
+        </select>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem">
+        <input type="date" style="padding:12px 14px;border:1px solid var(--border);border-radius:6px;background:var(--white);font-family:'DM Sans',sans-serif" required>
+        <input type="time" style="padding:12px 14px;border:1px solid var(--border);border-radius:6px;background:var(--white);font-family:'DM Sans',sans-serif" required>
+      </div>
+      <textarea placeholder="Tell us briefly about your concern" rows="4" style="width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:6px;background:var(--white);font-family:'DM Sans',sans-serif;resize:vertical;margin-bottom:1rem"></textarea>
+      <button class="btn-primary" type="submit" style="width:100%">Submit Request</button>
+    </form>
   </div>
 </section>
 
